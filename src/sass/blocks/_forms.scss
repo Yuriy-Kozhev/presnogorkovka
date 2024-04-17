@@ -1,0 +1,64 @@
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 265px);
+    justify-content: space-between;
+    grid-template-rows: 39px 196px 18px 40px;
+    row-gap: 20px;
+    &__input {
+        input {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            padding: 8px 20px;
+            color: $dark;
+            background: #FAFAFA;
+            border: 1px solid $dark-50;
+            outline: none;
+        }
+        label {
+            display: none;
+        }
+    }
+    &__textarea {
+        grid-column: span 2;
+        textarea {
+            resize: none;
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            padding: 8px 20px;
+            color: $dark;
+            background: #FAFAFA;
+            border: 1px solid $dark-50;
+            outline: none;
+        }
+        label {
+            display: none;
+        }
+    }
+    &__checkbox {
+        grid-column: span 2;
+        display: flex;
+        align-items: center;
+        input {
+            width: 18px;
+            height: 18px;
+            color: $dark;
+            border: 1px solid $dark-50;
+            outline: none;
+        }
+        label {
+            font-size: 18px;
+            padding: 0 0 0 10px;
+            color: $dark;
+        }
+        &-link {
+            text-decoration: underline;
+            transition: color 0.4s ease-in-out;
+            &:hover {
+                color: $link-dark;
+                transition: color 0.2s ease-in-out;
+            }
+        }    
+    }
+}

@@ -1,0 +1,36 @@
+.btn {
+    border: none;
+    background: $dark;
+    color: $light;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: color 0.4s ease-in-out;
+    &:hover {
+        color: $link-light;
+        transition: color 0.2s ease-in-out;
+    }
+    &_social {
+        position: relative;
+        width: 40px;
+        padding: 0;
+        line-height: 0;
+        svg path {
+            transition: fill 0.4s ease-in-out;
+        }
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        &:hover {
+            svg path {
+                fill: $link-light;
+                transition: fill 0.2s ease-in-out;
+            }
+        }
+    }
+}
