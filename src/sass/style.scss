@@ -32,6 +32,13 @@ p {
     margin: 0 auto;
 }
 
+.divider {
+    margin-top: 50px;
+    width: 1120px;
+    height: 2px;
+    background-color: $dark-50;
+}
+
 .header {
     max-width: 1920px;
     height: 233px;
@@ -262,12 +269,23 @@ p {
 
 .creative {
     margin-top: 40px;
+    &__tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
     &__wrapper {
-        margin-top: 10px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 700px);
         gap: 20px;
+        &_main {
+            margin-top: 50px;
+        }
+        &_home {
+            margin-top: 10px;
+        }
     }
     .post-prev {
         position: relative;

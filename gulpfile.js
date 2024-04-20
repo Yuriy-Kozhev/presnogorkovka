@@ -12,6 +12,9 @@ gulp.task("server", function () {
     browserSync.init({
         server: {
             baseDir: "dist", // Сервер запускается из папки dist
+            serveStaticOptions: { // Если есть несколько файлов html – сервер запустит все
+                extensions: ["html"]
+            }
         },
     });
 
