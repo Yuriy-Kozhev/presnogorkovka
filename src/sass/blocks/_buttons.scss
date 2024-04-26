@@ -7,10 +7,11 @@
     font-size: 16px;
     line-height: normal;
     text-transform: uppercase;
-    transition: color 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     &:hover {
         color: $link-light;
-        transition: color 0.2s ease-in-out;
+        box-shadow: inset 0 0 0 1px $light;
+        transition: all 0.2s ease-in-out;
     }
     &_social {
         position: relative;
