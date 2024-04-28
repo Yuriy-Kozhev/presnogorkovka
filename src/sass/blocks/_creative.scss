@@ -1,0 +1,167 @@
+.creative {
+    margin-top: 40px;
+    &__tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 700px);
+        gap: 20px;
+        &_main {
+            margin-top: 50px;
+        }
+        &_home {
+            margin-top: 10px;
+        }
+    }
+    .post-prev {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto auto 80px;
+            &:before {
+                content:"";
+                display: block;
+                height: 40px;
+                width: 99.4%;
+                position: absolute;
+                bottom: 80px;
+                left: 1px;
+                background: linear-gradient(to bottom,rgba(39,39,39,0),#f1ede3 60%);
+            }
+        &__img {
+            width: 100%;
+            min-height: 230px;
+            max-height: 390px;
+            object-fit: cover;
+            object-position: top;
+        }
+        &__content {
+            padding: 20px;
+            min-height: 230px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 20px;
+            border-right: 1px solid $dark-15;
+            border-left: 1px solid $dark-15;
+            background-color: $dark-6;
+            overflow: hidden;
+        }
+        &__autor {
+            font-size: 18px;
+            font-style: italic;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: all 0.4s ease-in-out;
+            &:hover {
+                color: $link-dark;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        &__title {
+            font-weight: 700;
+        }
+        &__bottom {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid $dark-15;
+            background-color: $dark-6;
+        }
+        &__reactions {
+            display: flex;
+            gap: 20px;
+        }
+        &__likes {
+            display: flex;
+            gap: 6px;
+            svg {
+                transition: transform 0.8s;
+                &:hover {
+                    transform: scale(1.2);
+                    transition: transform 0.4s;
+                }
+            }
+            &-count {
+                font-size: 20px;
+            }
+        }
+        &__comments {
+            display: flex;
+            gap: 6px;
+            svg {
+                margin-top: 4px;
+                transition: transform 0.8s;
+                &:hover {
+                    transform: scale(1.2);
+                    transition: transform 0.4s;
+                }
+            }
+            &-count {
+                font-size: 20px;
+            }
+        }
+    } 
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .creative {
+        &__wrapper {
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(3,700px);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .creative {
+        &__wrapper {
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(6,700px);
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .creative {
+        margin-top: 20px;
+    }
+    .creative .post {
+        &-prev {
+            &__content {
+                padding: 10px;
+            }
+            &__text {
+                font-size: 18px;
+            }
+            &__bottom {
+                padding: 10px;
+                gap: 18px;
+            }
+        }
+    }
+}

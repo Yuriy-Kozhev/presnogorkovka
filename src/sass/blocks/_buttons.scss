@@ -40,3 +40,37 @@
         color: $link-light;
     }
 }
+
+@media (max-width: 1200px) {
+    .btn {
+        padding: 10px 10px;
+        font-size: 14px;
+        line-height: unset;
+    }
+}
+
+@media (max-width: 992px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        line-height: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .btn {
+        padding: 10px 10px;
+        font-size: 14px;
+        line-height: unset;
+    }
+}
