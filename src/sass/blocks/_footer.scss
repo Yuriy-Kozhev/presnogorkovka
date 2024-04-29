@@ -1,6 +1,6 @@
 .footer {
     margin-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
     &__wrapper {
         display: grid;
         grid-template-columns: 550px 420px;
@@ -48,6 +48,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        &-bunnies {
+            display: none;
+            position: absolute;
+            bottom: 85px;
+            right: 28%;
+        }
         svg {
             position: absolute;
             bottom: 47px;
@@ -158,9 +164,13 @@
             justify-content: center;
         }
         &__bottom {
+            margin-top: 120px;
             height: 90px;
             svg {
                 display: none;
+            }
+            &-bunnies {
+                display: block;
             }
         }
         &__copyright {
