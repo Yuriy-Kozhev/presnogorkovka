@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(2, 265px);
     justify-content: space-between;
-    grid-template-rows: 39px 196px 18px 40px;
+    grid-template-rows: 39px minmax(196px, auto) 18px 40px;
     row-gap: 20px;
     &__input {
         input {
@@ -22,7 +22,7 @@
     &__textarea {
         grid-column: span 2;
         textarea {
-            resize: none;
+            resize: vertical;
             width: 100%;
             height: 100%;
             font-size: 18px;
@@ -60,5 +60,37 @@
                 transition: color 0.2s ease-in-out;
             }
         }    
+    }
+}
+
+@media (max-width: 1200px) {
+    .form {
+        grid-template-columns: repeat(2,255px);
+    }
+}
+
+@media (max-width: 992px) {
+    .form {
+        grid-template-columns: repeat(2,350px);
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: repeat(2,260px);
+    }
+}
+
+@media (max-width: 576px) {
+    .form {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto minmax(196px, auto) auto auto;
+        &__textarea {
+            grid-column: 1;
+        }
+        &__checkbox {
+            grid-column: 1;
+            justify-content: center;
+        }
     }
 }

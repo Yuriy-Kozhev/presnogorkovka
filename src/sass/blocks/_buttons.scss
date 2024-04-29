@@ -43,7 +43,7 @@
 
 @media (max-width: 1200px) {
     .btn {
-        padding: 10px 10px;
+        padding: 10px 20px;
         font-size: 14px;
         line-height: unset;
     }
@@ -54,22 +54,15 @@
         padding: 10px 20px;
         font-size: 16px;
         line-height: normal;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        max-width: 540px;
+        &_active {
+            color: $link-light;
+        }
     }
 }
 
 @media (max-width: 576px) {
-    .container {
-        width: 100%;
-        padding: 0 20px;
-    }
     .btn {
-        padding: 10px 10px;
+        padding: 10px 20px;
         font-size: 14px;
         line-height: unset;
     }
