@@ -8,26 +8,6 @@
         margin: 0;
         list-style-type: none;
     }
-    &__link {
-        font-size: 18px;
-        font-weight: 700;
-        line-height: normal;
-        text-transform: uppercase;
-        &:after {
-            content: "";
-            display: block;
-            height: 3px;
-            background-color: $dark;
-            width: 0%;
-            transition: width 1s;
-        }
-        &:hover {
-            &:after {
-                width: 100%;
-                transition: width 0.4s;
-            }
-        }
-    }
 }
 
 @media (max-width: 576px) {
