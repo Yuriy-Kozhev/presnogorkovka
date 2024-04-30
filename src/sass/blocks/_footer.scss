@@ -42,6 +42,7 @@
         gap: 20px;
         justify-content: right;
         align-items: start;
+        align-content: start;
         flex-wrap: wrap;
     }
     &__bottom {
@@ -129,8 +130,8 @@
     }
     .footer {
         &__tags {
-            width: 70%;
-            height: 340px;
+            width: 65%;
+            height: auto;
         }
         &__bottom {
             margin-top: 20px;
