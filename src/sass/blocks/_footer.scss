@@ -24,6 +24,11 @@
     &-form {
         position: relative;
         margin-top: 15px;
+        &__btn {
+            &_color {
+                color: $light;
+            }
+        }
         svg {
             position: absolute;
             right: -13px;
@@ -101,6 +106,13 @@
         &__wrapper {
             grid-template-columns: auto;
             grid-template-rows: repeat(2,auto);
+        }
+        &-form {
+            &__btn {
+                &_color {
+                    color: $link-light;
+                }
+            }
         }
         &__tags {
             margin-top: 0;

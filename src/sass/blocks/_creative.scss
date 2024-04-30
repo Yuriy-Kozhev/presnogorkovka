@@ -87,10 +87,10 @@
         display: flex;
         gap: 6px;
         svg {
-            transition: transform 0.8s;
+            transition: transform 0.4s;
             &:hover {
                 transform: scale(1.2);
-                transition: transform 0.4s;
+                transition: transform 0.2s;
             }
         }
         &-count {
@@ -102,10 +102,10 @@
         gap: 6px;
         svg {
             margin-top: 4px;
-            transition: transform 0.8s;
+            transition: transform 0.4s;
             &:hover {
                 transform: scale(1.2);
-                transition: transform 0.4s;
+                transition: transform 0.2s;
             }
         }
         &-count {
