@@ -43,53 +43,57 @@
             line-height: normal;
         }
     }
-    &-people {
+}
+
+.people {
+    margin-top: 30px;
+    &__wrapper {
         padding-top: 10px;
         display: grid;
         grid-template-columns: repeat(4, 265px);
         grid-template-rows: repeat(2, 366px);
         gap: 20px;
-        &__item {
-            position: relative;
-            display: block;
-        }
-        &__img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        &__descr {
-            position: absolute;
-            bottom: 0;
-            padding: 10px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-            height: auto;
-            background: $dark-50;
-        }
-        &__family {
-            color: $light;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: normal;
-        }
-        &__name {
-            color: $light;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: normal;
-        }
-        &__years {
-            color: $light;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: normal;
-        }
+    }
+    &__item {
+        position: relative;
+        display: block;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__descr {
+        position: absolute;
+        bottom: 0;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        background: $dark-50;
+    }
+    &__family {
+        color: $light;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__name {
+        color: $light;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__years {
+        color: $light;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
     }
 }
 
@@ -104,7 +108,9 @@
                 font-size: 20px;
             }
         }
-        &-people {
+    }
+    .people {
+        &__wrapper {
             grid-template-columns: repeat(4,1fr);
             grid-template-rows: repeat(2,310px);
         }
@@ -145,7 +151,9 @@
                 font-size: 20px;
             }
         }
-        &-people {
+    }
+    .people {
+        &__wrapper {
             grid-template-columns: repeat(2,1fr);
             grid-template-rows: repeat(4,360px);
         }
@@ -177,7 +185,9 @@
                 }
             }
         }
-        &-people {
+    }
+    .people {
+        &__wrapper {
             grid-template-columns: repeat(1,1fr);
             grid-template-rows: repeat(8,450px);
         }
