@@ -42,6 +42,9 @@
     &_color {
         color: $link-light;
     }
+    &_text {
+        text-transform: unset;
+    }
 }
 
 @media (max-width: 1200px) {
