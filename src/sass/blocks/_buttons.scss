@@ -45,6 +45,31 @@
     &_text {
         text-transform: unset;
     }
+    &_unhover {
+        pointer-events: none;
+    }
+
+    &__dropdown {
+        position: relative;
+        display: inline-block;
+        &-wrapper {
+            text-align: center;
+        }
+        &-content {
+            display: none;
+            position: absolute;
+            width: 100%;
+            opacity: .9;
+            z-index: 1;
+            a {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        &:hover .btn__dropdown-content {
+            display: block;
+        }
+    }
 }
 
 @media (max-width: 1200px) {
@@ -65,5 +90,10 @@
     .btn {
         font-size: 14px;
         line-height: unset;
+        &__dropdown {
+            &-content {
+                width: 156px;
+            }
+        }
     }
 }
