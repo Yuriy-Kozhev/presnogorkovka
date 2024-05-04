@@ -1,34 +1,43 @@
-// CSS анимации
+'use strict'
 
-new WOW().init();
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // CSS анимации
 
-// Галерея
+    new WOW().init();
 
-const photo = document.querySelectorAll('.photo__item');
+    // Галерея
 
-photo.forEach(item => {
-    if (item.naturalWidth > item.naturalHeight) {
-        item.classList.add('photo__item_wide');
-    }
-})
+    const photo = document.querySelectorAll('.photo__item');
 
-// Выпадающий список
-
-const dropdown = document.querySelector('.btn__dropdown-content'),
-    dropbtn = document.querySelector('.btn__dropdown'),
-    droplink = document.querySelectorAll('.btn__dropdown-content')
-
-dropbtn.addEventListener('mouseenter', () => {
-    dropdown.classList.add('btn__dropdown-content_show')
-});
-
-dropbtn.addEventListener('mouseleave', () => {
-    dropdown.classList.remove('btn__dropdown-content_show')
-});
-
-droplink.forEach(item => {
-    item.addEventListener('click', () => {
-        dropdown.classList.remove('btn__dropdown-content_show')
+    photo.forEach(item => {
+        if (item.naturalWidth > item.naturalHeight) {
+            item.classList.add('photo__item_wide');
+        }
     })
+
+    // Выпадающий список
+
+    const dropdown = document.querySelector('.btn__dropdown-content'),
+        dropbtn = document.querySelector('.btn__dropdown'),
+        droplink = document.querySelectorAll('.btn__dropdown-content');
+
+    if (dropbtn) {
+        dropbtn.addEventListener('mouseenter', () => {
+            dropdown.classList.add('btn__dropdown-content_show')
+        });
+
+        dropbtn.addEventListener('mouseleave', () => {
+            dropdown.classList.remove('btn__dropdown-content_show')
+        });
+    } // Проверка на то, что dropbtn – не null, иначе в консоли выходит ошибка: Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+
+    droplink.forEach(item => {
+        item.addEventListener('click', () => {
+            dropdown.classList.remove('btn__dropdown-content_show')
+        })
+    });
 })
+
+
 

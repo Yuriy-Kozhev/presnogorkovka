@@ -4,7 +4,7 @@
     margin-top: 35px;
     &__top {
         display: grid;
-        grid-template-columns: 200px auto 200px;
+        grid-template-columns: 200px 200px;
         justify-content: space-between;
         align-items: center;
         max-width: 1920px;
@@ -12,13 +12,22 @@
         margin: 0 auto;
         padding: 0 30px;
     }
-    &__date {
-        font-size: 18px;
-        font-weight: 700;
+    &__age {
+        font-family: Kanalisirung;
+        font-size: 50px;
+        font-weight: 500;
+        line-height: normal;
+        color: $light;
+        &-wrapper {
+            position: absolute;
+            top: 76px;
+            left: 50%;
+            transform: translate(-50%);
+        }
     }
     &__socials {
         display: inline-flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         gap: 20px;
         &-item {
@@ -30,6 +39,12 @@
                 transition: transform 0.4s;
             }
         }
+    }
+    &__forest {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translate(-50%);
     }
     &__user {
         justify-self: right;
@@ -44,7 +59,7 @@
 
     &__line {
         position: relative;
-        z-index: 1;
+        z-index: -1;
         max-width: 1920px;
         &-bold {
             background-color: $dark;
@@ -154,7 +169,7 @@
             grid-template-columns: auto auto;
             padding: 0 20px;
         }
-        &__date {
+        &__age {
             display: none;
         }
         &__user {
