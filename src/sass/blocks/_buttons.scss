@@ -65,9 +65,9 @@
                 display: flex;
                 justify-content: center;
             }
-        }
-        &:hover .btn__dropdown-content {
-            display: block;
+            &_show {
+                display: block;
+            }
         }
     }
 }
@@ -92,7 +92,7 @@
         line-height: unset;
         &__dropdown {
             &-content {
-                width: 156px;
+                width: 100%;
             }
         }
     }
