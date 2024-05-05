@@ -3,7 +3,7 @@
     padding-bottom: 25px;
     &__wrapper {
         display: grid;
-        grid-template-columns: 550px 420px;
+        grid-template-columns: 550px 430px;
         justify-content: space-between;
     }
     &__feed-title {
@@ -25,6 +25,7 @@
         position: relative;
         margin-top: 15px;
         &__btn {
+            justify-self: left;
             &_color {
                 color: $light;
             }
@@ -164,7 +165,7 @@
         &-form {
             margin-top: 20px;
             &__btn {
-                text-align: center;
+                margin: 0 auto;
             }
             svg {
                 display: none;
