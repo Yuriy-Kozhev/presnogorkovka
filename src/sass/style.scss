@@ -42,6 +42,10 @@ ul {
 .container {
     width: 1120px;
     margin: 0 auto;
+    &_post {
+        width: 740px;
+        margin: 0 auto;
+    }
 }
 
 .divider {
@@ -61,6 +65,22 @@ ul {
     &__script {
         margin-top: 10px;
     }
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.noHover{
+    pointer-events: none;
 }
 
 @media (max-width: 1200px) {

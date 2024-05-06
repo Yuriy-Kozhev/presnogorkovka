@@ -34,22 +34,12 @@
             font-style: italic;
         }
     }
-    &__text {
-        margin: 0 auto;
-        width: 740px;
-        margin-top: 30px;
-    }
     &__date {
-        margin: 0 auto;
-        width: 740px;
-        margin-top: 30px;
-        font-size: 20px;
+        font-size: 18px;
         font-style: italic;
         color: $dark-50;
     }
     &__actions {
-        margin: 30px auto 0 auto;
-        width: 740px;
         display: flex;
         align-items: center;
         gap: 20px;
@@ -71,8 +61,6 @@
     }
     &__comment {
         position: relative;
-        margin: 40px auto 0 auto;
-        width: 740px;
         svg {
             position: absolute;
             right: -53px;
@@ -133,7 +121,7 @@
             align-self: center;
             justify-self: end;
             color: $dark-50;
-            font-size: 20px;
+            font-size: 18px;
             font-style: italic;
             font-weight: 400;
         }
@@ -172,26 +160,21 @@
 @media (max-width: 992px) {
     .container {
         max-width: 720px;
-    }
-    .post {
-        &__text {
+        &_post {
             width: 100%;
         }
+    }
+    .post {
         &__img {
             &-descr {
                 width: 100%;
                 line-height: normal;
             }
         }
-        &__date {
-            width: 100%;
-        }
         &__actions {
-            width: 100%;
             flex-wrap: wrap;
         }
         &__comment {
-            width: 100%;
             svg {
                 right: -15px;
             }
