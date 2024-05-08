@@ -1,0 +1,39 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .map {
+        &__script {
+            iframe {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .map {
+        margin-top: 30px;
+        &__script {
+            iframe {
+                height: 250px;
+            }
+        }
+    }
+}
