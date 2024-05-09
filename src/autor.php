@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Всё о Пресногорьковке: история, новости, творчество, общение. Заходите, у нас интересно!">
+        content="Всё о Пресногорьковке: события, творчество, общение, история. Заходите, у нас интересно!">
     <title>Пресногорьковка</title>
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
