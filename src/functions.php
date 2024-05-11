@@ -7,4 +7,21 @@
     };
  
     add_theme_support( 'post-thumbnails' );
+    
+    // Меню
+
+    add_theme_support( 'menus' );
+
+    add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 3);
+    
+    function filter_nav_menu_link_attributes($atts, $item, $args) {
+        if ($args->menu === 'Main') {
+            $atts['class'] = 'btn';
+            
+            if ( $item->current ) {
+                $atts['class'] = 'btn btn_color';
+            }
+        }
+        return $atts;
+    }
 ?>

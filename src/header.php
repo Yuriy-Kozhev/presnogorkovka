@@ -117,4 +117,22 @@
                 </div>
             </div>
         </a>
+
+        <nav aria-label="Главное меню" class="menu">
+            <div class="container">
+
+                <?php
+                    wp_nav_menu( [
+                        'menu'            => 'Main',
+                        'container'       => false,
+                        'menu_class'      => 'menu-list',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<ul class="menu-list">%3$s</ul>',
+                        'depth'           => 1,
+                    ] );
+                ?>
+                
+            </div>
+        </nav>
     </header>

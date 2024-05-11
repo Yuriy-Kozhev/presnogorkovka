@@ -6,17 +6,6 @@ Template Name: История
 
 <?php get_header();?>
 
-    <nav aria-label="Главное меню" class="menu">
-        <div class="container">
-            <ul class="menu-list">
-                <li><a href="#" class="btn">события</a></li>
-                <li><a href="history.html" class="btn btn_color">история</a></li>
-                <li><a href="creative.html" class="btn">творчество</a></li>
-                <li><a href="#" class="btn">форум</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <section class="photo">
         <div class="container">
 

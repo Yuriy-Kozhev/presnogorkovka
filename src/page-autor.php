@@ -6,17 +6,6 @@ Template Name: Автор
 
 <?php get_header();?>
 
-    <nav aria-label="Главное меню" class="menu">
-        <div class="container">
-            <ul class="menu-list">
-                <li><a href="news.html" class="btn">события</a></li>
-                <li><a href="history.html" class="btn">история</a></li>
-                <li><a href="creative.html" class="btn btn_color">творчество</a></li>
-                <li><a href="#" class="btn">форум</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="autor">
         <div class="container">
             <div class="autor__name">Виниченко Сергей Николаевич</div>
