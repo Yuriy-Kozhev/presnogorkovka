@@ -16,7 +16,7 @@ gulp.task("styles", function () {
 
 gulp.task("watch", function () {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
-    gulp.watch("src/*.+(html|php)").on("change", gulp.parallel("html"));
+    gulp.watch("src/*.php)").on("change", gulp.parallel("html"));
     gulp.watch("src/js/**/*.js").on("change", gulp.parallel("scripts"));
     gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));
     gulp.watch("src/img/**/*").on("all", gulp.parallel("images"));
@@ -24,7 +24,7 @@ gulp.task("watch", function () {
 
 gulp.task("html", function () {
     return gulp
-        .src("src/*.+(html|php)")
+        .src("src/*.php)")
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("dist/"));
 });
