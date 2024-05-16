@@ -87,6 +87,12 @@ ul {
     pointer-events: none;
 }
 
+@media (max-width: 576px) {
+    p {
+        font-size: 18px;
+    }
+}
+
 @import "blocks/buttons";
 @import "blocks/title";
 @import "blocks/slider";
