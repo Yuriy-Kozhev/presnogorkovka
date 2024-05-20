@@ -20,11 +20,31 @@ Template Name: Творчество
                 <a href="#" class="btn">история</a>
                 <a href="#" class="btn">биографии</a>
             </div>
+
+            <?php
+                echo '<form action="" method="POST" id="filter">';
+
+                $terms = get_terms( array( 
+                    'taxonomy' => 'category', 
+                    'orderby' => 'count',
+                    'order' => 'DESC',
+                    'exclude' => '12', 
+                ) );
+
+                if ($terms) {
+                    echo '<select name="categoryfilter"><option>Выберите категорию</option>';
+                    foreach ($terms as $term) {
+                        echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+                    }
+                    echo '</select>';
+                }
+                
+                echo '<button>Применить фильтр</button><input type="hidden" name="action" value="myfilter"></form>'
+            ?>
             
-            <div class="post-prev__wrapper mt-40">
+            <div class="post-prev__wrapper mt-40" id="response">
 
                 <?php
-
                     $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
                     $wp_query = new WP_Query( array(
                         'posts_per_page' => 6,
@@ -118,7 +138,7 @@ Template Name: Творчество
             
             </div>
 
-            <?php echo do_shortcode('[ajax_load_more button_label="Загрузить ещё" post_type="post" posts_per_page="6" transition_delay="200" pause="true" scroll="false" offset="6"]'); ?>
+            <?php echo do_shortcode('[ajax_load_more button_label="Загрузить ещё" button_done_label="На сегодня это всё" post_type="post" posts_per_page="6" transition_delay="200" pause="true" scroll="false" offset="6"]'); ?>
             
             <div class="divider"></div>
         </div>
