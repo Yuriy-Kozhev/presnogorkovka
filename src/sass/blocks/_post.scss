@@ -6,13 +6,7 @@
         font-size: 20px;
         font-style: italic;
         a {
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: all 0.4s ease-in-out;
-            &:hover {
-                color: $link-dark;
-                transition: all 0.2s ease-in-out;
-            }
+            @include link-underline;
         }
     }
     &__title {
@@ -44,6 +38,15 @@
         align-items: center;
         gap: 20px;
     }
+    &__navigation {
+        margin-top: 30px;
+        font-size: 20px;
+        a {
+            font-style: italic;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    }
     &__likes {
         display: flex;
         align-items: start;
@@ -74,7 +77,7 @@
             font-size: 18px;
             padding: 8px 20px;
             color: $dark;
-            background: #FAFAFA;
+            background: #ffffff;
             border: 1px solid $dark-50;
             outline: none;
             vertical-align:top;
@@ -211,11 +214,6 @@
         &__title {
             font-size: 26px;
         }
-        &__text {
-            p {
-                font-size: 18px;
-            }
-        }
         &__date {
             font-size: 18px;
         }
@@ -223,6 +221,9 @@
             &-count {
                 font-size: 18px;
             }
+        }
+        &__navigation {
+            font-size: 18px;
         }
         &__comment {
             svg {

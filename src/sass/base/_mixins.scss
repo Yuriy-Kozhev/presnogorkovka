@@ -1,0 +1,10 @@
+
+@mixin link-underline {    
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        color: $link-dark;
+        transition: all 0.2s ease-in-out;
+    }
+}

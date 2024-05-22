@@ -7,7 +7,7 @@ Template Name: Пост
 <?php get_header();?>
 
     <div class="divider-birds">
-        <img src="img/birds-on-wires.svg" alt="">
+        <img src="<?php echo bloginfo('template_url');?>/assets/img/birds-on-wires.svg" alt="">
     </div>
 
     <article class="post">
@@ -19,7 +19,7 @@ Template Name: Пост
             <h1 class="post__title">Деревенский КВН</h1>
             
             <figure>
-                <img src="img/posts/vinichenko-s-n/derevenskiy-kvn.jpg" alt="Вид на Пресное озеро в июле."
+                <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/derevenskiy-kvn.jpg" alt="Вид на Пресное озеро в июле."
                     class="post__img">
                 <figcaption class="post__img-descr">
                     Место происшествия на озере Пресном. Лето 2011 года.
@@ -146,7 +146,7 @@ Template Name: Пост
 
             <div class="post__comments">
                 <a href="#" class="post__comments-user">
-                    <img src="img/posts/vinichenko-s-n/pered-imenem-tvoim.jpg" alt="Аватар" class="post__comments-userpick">
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/pered-imenem-tvoim.jpg" alt="Аватар" class="post__comments-userpick">
                     <div class="post__comments-username">Галина Балдина</div>
                 </a>
                 <div class="post__comments-date">26.09.2023</div>
