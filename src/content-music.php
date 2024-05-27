@@ -23,13 +23,13 @@
     </a>
     
     <div class="post-prev__content">
-        <a href="autor.html" class="post-prev__autor"><?php the_author(); ?></a>
+        <a href="author" class="post-prev__autor"><?php the_author(); ?></a>
         <div class="post-prev__title"><?php the_title(); ?></div>
         <div class="post-prev__text"><?php the_excerpt(); ?></div>
     </div>
     
     <div class="post-prev__bottom">
-        <a class="btn" href="<?php echo get_permalink(); ?>">Читать</a>
+        <a class="btn" href="<?php echo get_permalink(); ?>">Слушать</a>
         <div class="post-prev__reactions">
             <div class="post-prev__likes">
                 <button aria-label="Лайк">
@@ -64,11 +64,9 @@
                         </clipPath>
                     </defs>
                 </svg>
-                <div class="post-prev__comments-count">5</div>
+                <div class="post-prev__comments-count">4</div>
             </a>
         </div>
     </div>
 
 </div>
-
-        

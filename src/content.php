@@ -1,3 +1,4 @@
+<!-- Контент отдельного поста -->
 
 <div class="divider-birds">
     <img src="<?php echo bloginfo('template_url');?>/assets/img/birds-on-wires.svg" alt="">
@@ -7,8 +8,14 @@
 
 	<article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+		<?php $author_id = get_the_author_meta( 'ID' ); ?> <!-- Получаем в переменную данные автора -->
+
 		<div class="post__autor">
-			<a href="autor.html"><?php the_author(); ?></a>
+			<?php
+			if( !in_category( 20 ) ) { ?> <!-- Если не новости -->
+				<a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php the_author(); ?></a>
+			<?php
+			} ?>
 		</div>
 
 		<h1 class="post__title"><?php the_title(); ?></h1>
@@ -92,23 +99,31 @@
 					</button>
 					<div class="post__likes-count">30</div>
 				</div>
-				<button class="btn post__actions-subscribe">подписаться на автора</button>
+				<?php
+				if( !in_category( 20 ) ) { ?>
+					<!-- <button class="btn post__actions-subscribe">подписаться на автора</button> -->
+				<?php
+				} ?>
 				<button class="btn">поделиться с друзьями</button>
 			</div>
 
+			<!-- Навигация -->
+
 			<div class="post__navigation">
 				<?php
-				if( get_adjacent_post(false, '', false) ) {
-					next_post_link('Читайте также: %link', '%title', true);
-				}
-				else {
-					$last = new WP_Query('posts_per_page=1&order=ASC');
-					$last->the_post();
 				
-					echo '<a href="' . get_permalink() . '" class="btn">Другие тексты</a>';
+					if( get_adjacent_post(false, '20', true) ) {
+						previous_post_link('Читайте также: %link', '%title', false, '20');
+					}
+					else {
+						$last = new WP_Query('posts_per_page=1&order=DESC');
+						$last->the_post();
+					
+						echo '<a href="' . get_permalink() . '" class="btn">Другие тексты</a>';
+					
+						wp_reset_postdata();
+					}
 				
-					wp_reset_postdata();
-				}
 				?>
 			</div>	
 

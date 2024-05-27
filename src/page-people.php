@@ -14,7 +14,7 @@ Template Name: Люди
 
             <div class="people__wrapper">
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/shekhter-a-p-1902.jpg" alt="Шехтер А.П."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/shekhter-a-p-1902.jpg" alt="Шехтер А.П."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Шехтер</div>
@@ -23,7 +23,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/musrepov-gabit-mahmutovich.jpg" alt="Мусрепов Г.М."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/musrepov-gabit-mahmutovich.jpg" alt="Мусрепов Г.М."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Мусрепов</div>
@@ -32,7 +32,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/kobzhasarov-nurmakan-kobzhasarovich.jpg" alt="Кобжасаров Н.К."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/kobzhasarov-nurmakan-kobzhasarovich.jpg" alt="Кобжасаров Н.К."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Кобжасаров</div>
@@ -41,7 +41,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/ermolaev-yuriy-fedorovich.jpg" alt="Ермолаев Ю.Ф."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/ermolaev-yuriy-fedorovich.jpg" alt="Ермолаев Ю.Ф."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Ермолаев</div>
@@ -50,7 +50,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/kalachev-mihail-pavlovich.jpg" alt="Калачёв М.П."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/kalachev-mihail-pavlovich.jpg" alt="Калачёв М.П."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Калачёв</div>
@@ -59,7 +59,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/merinova-tatyana-dmitrievna.jpg" alt="Меринова Т.Д."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/merinova-tatyana-dmitrievna.jpg" alt="Меринова Т.Д."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Меринова</div>
@@ -68,7 +68,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/voropaev-sergey-nikolaevich.jpg" alt="Воропаев С.Н."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/voropaev-sergey-nikolaevich.jpg" alt="Воропаев С.Н."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Воропаев</div>
@@ -77,7 +77,7 @@ Template Name: Люди
                     </div>
                 </a>
                 <a href="#" class="people__item">
-                    <img src="img/posts/vinichenko-s-n/kizin-pavel-vasilyevich.jpg" alt="Кизин П.В."
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/kizin-pavel-vasilyevich.jpg" alt="Кизин П.В."
                         class="people__img">
                     <div class="people__descr">
                         <div class="people__family">Кизин</div>

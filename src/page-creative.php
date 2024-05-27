@@ -50,19 +50,19 @@ Template Name: Творчество
                 <?php
                     $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1; // Текущая страница
                     
-                    $wp_query = new WP_Query( array(
+                    $query = new WP_Query( array(
                         'posts_per_page' => 6,
                         'paged'          => $paged,
-                        'category_name'    => 'creativity',
+                        'cat'    => '-1, -20',
                         'orderby'     => 'date',
                         'order'       => 'DESC',
                         'post_type'   => 'post',
                         'suppress_filters' => true,
                     ) );
                     
-                    if ( $wp_query->have_posts() ) { 
-                        while ( $wp_query->have_posts() ) { 
-                            $wp_query->the_post();
+                    if ( $query->have_posts() ) { 
+                        while ( $query->have_posts() ) { 
+                            $query->the_post();
                             get_template_part( 'post-creative' );
                         }
                         wp_reset_postdata();
@@ -73,7 +73,7 @@ Template Name: Творчество
             <!-- Кнопка LoadMore -->
 
             <?php
-                $max_pages = $wp_query->max_num_pages;
+                $max_pages = $query->max_num_pages;
                 if( $paged < $max_pages ) {
                     echo '<a href="#" id="loadmore" data-max_pages="' . $max_pages . '" data-paged="' . $paged . '"><button class="btn btn_load-more animate__swing wow" data-wow-duration="1s" data-wow-delay="1s">загрузить ещё</button></a>';
                 }

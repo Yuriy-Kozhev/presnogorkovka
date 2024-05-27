@@ -8,8 +8,6 @@
         wp_enqueue_script( 'jquery' );
         wp_enqueue_script( 'filter', get_template_directory_uri() . '/assets/js/filter.js', array('jquery'), null, true );
         wp_localize_script( 'filter', 'true_obj', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
-        wp_enqueue_script( 'my_loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array('jquery'), null, true );
-        wp_localize_script( 'my_loadmore', 'loadmore_obj', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
     };
  
     add_theme_support( 'post-thumbnails' );
@@ -21,14 +19,14 @@
     add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 3 );
     
     function filter_nav_menu_link_attributes( $atts, $item, $args ) {
-        if ($args->menu === 'Main') {
+        if ($args->menu === 'Main' || $args->menu === 'Creative' || $args->menu === 'Vinichenko') {
             $atts['class'] = 'btn';
             
             if ($item->current) {
                 $atts['class'] = 'btn btn_color';
             }
             
-            if ($item->ID === 50 && in_category('creativity') ) {
+            if ($item->ID === 50 && in_category( ['33', '5', '18', '6', '10', '21', '4', '9', '8', '7', '22'] ) && !in_category( ['2', '35', '39', '3', '43', '37', '41', '20'] ) ) {
                 $atts['class'] = 'btn btn_color';
             }
         }
@@ -62,7 +60,7 @@
         if ( have_posts() ) {
             while ( have_posts() ) : the_post();
                 
-                get_template_part( 'post-creative' );
+                get_template_part( 'content-creative' );
             
             endwhile;
             
@@ -71,38 +69,6 @@
         }
     
         die();
-    }
-
-    // Подгрузка постов кнопкой LoadMore
-
-    add_action( 'wp_ajax_loadmore', 'my_loadmore' );
-    add_action( 'wp_ajax_nopriv_loadmore', 'my_loadmore' );
-
-    function my_loadmore() {
- 
-        $paged = ! empty( $_POST[ 'paged' ] ) ? $_POST[ 'paged' ] : 1;
-        $paged++;
-     
-        $args = array(
-            'paged' => $paged,
-            'post_status' => 'publish'
-        );
-     
-        query_posts( $args );
-    
-        if ( have_posts() ) {
-            while ( have_posts() ) : the_post();
-                
-                get_template_part( 'post-creative' );
-            
-            endwhile;
-            
-        } else {
-            echo 'Ничего не найдено';
-        }
-     
-        die();
-     
     }
 
 ?>
