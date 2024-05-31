@@ -6,16 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new WOW().init();
 
-    // Галерея
-
-    const photo = document.querySelectorAll('.photo__item');
-
-    photo.forEach(item => {
-        if (item.naturalWidth > item.naturalHeight) {
-            item.classList.add('photo__item_wide');
-        }
-    })
-
     // Выпадающий список
 
     const dropdown = document.querySelector('.btn__dropdown-content'),

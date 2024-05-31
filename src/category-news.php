@@ -14,7 +14,7 @@ get_header();
         
         <!-- Шаблон вывода постов -->
 
-        <div class="post-prev__wrapper mt-10">
+        <div class="post-prev__wrapper mt-20">
             <?php
                 $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1; // Текущая страница
 
@@ -33,7 +33,7 @@ get_header();
                 if ( $query->have_posts() ) {
 					while ( $query->have_posts() ) { 
 						$query->the_post();
-						get_template_part( 'template-parts/content-news' );
+						get_template_part( 'template-parts/content-creative' );
 					}
 					wp_reset_postdata();
                 }

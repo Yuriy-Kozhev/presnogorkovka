@@ -29,7 +29,7 @@
         }
     }
     &__date {
-        font-size: 18px;
+        font-size: 20px;
         font-style: italic;
         color: $dark-50;
     }
@@ -42,9 +42,7 @@
         margin-top: 30px;
         font-size: 20px;
         a {
-            font-style: italic;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+            @include link-underline;
         }
     }
     &__likes {
@@ -84,72 +82,6 @@
         }
         &-btn {
             width: 100%;
-        }
-    }
-    &__comments {
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: 48px min-content min-content auto auto;
-        grid-template-rows: repeat(3, auto);
-        column-gap: 28px;
-        row-gap: 10px;
-        align-items: start;
-        &-user {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-            grid-column: 1 / span 4;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: all 0.4s ease-in-out;
-            &:hover {
-                color: $link-dark;
-                transition: all 0.2s ease-in-out;
-            }
-        }
-        &-userpick {
-            width: 48px;
-            height: 48px;
-            border: 1px solid $dark-50;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;
-        }
-        &-username {
-            font-size: 20px;
-            font-style: italic;
-            font-weight: 400;
-        }
-        &-date {
-            align-self: center;
-            justify-self: end;
-            color: $dark-50;
-            font-size: 18px;
-            font-style: italic;
-            font-weight: 400;
-        }
-        &-text {
-            margin-bottom: 0;
-            grid-column: 2 / span 4;
-        }
-        &-reply {
-            font-size: 20px;
-            font-style: italic;
-            font-weight: 400;
-            color: $dark-50;
-            grid-column: 2 / 3;
-            justify-self: start;
-        }
-        &-likes {
-            grid-column: 3 / 4;
-        }
-        &-delete {
-            font-size: 20px;
-            font-style: italic;
-            font-weight: 400;
-            color: $dark-50;
-            grid-column: 4 / 5;
-            justify-self: start;
         }
     }
 }
@@ -228,28 +160,6 @@
         &__comment {
             svg {
                 display: none;
-            }
-        }
-        &__comments {
-            &-username {
-                font-size: 18px;
-            }
-            &-date {
-                font-size: 18px;
-                grid-row: 2/3;
-                justify-self: start;
-                margin-top: 10px;
-            }
-            &-text {
-                font-size: 18px;
-                grid-column: 1/span 4;
-            }
-            &-reply {
-                font-size: 18px;
-                grid-column: 1/2;
-            }
-            &-delete {
-                font-size: 18px;
             }
         }
     }

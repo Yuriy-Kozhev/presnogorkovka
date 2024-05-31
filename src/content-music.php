@@ -47,9 +47,9 @@
                         </defs>
                     </svg>
                 </button>
-                <div class="post-prev__likes-count">20</div>
+                <div class="post-prev__likes-count">0</div>
             </div>
-            <a aria-label="Комментарии" href="#" class="post-prev__comments">
+            <a aria-label="Комментарии" href="<?php comments_link(); ?>" class="post-prev__comments">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 26 26"
                     fill="none">
                     <g clip-path="url(#clip0_432_656)">
@@ -64,7 +64,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-                <div class="post-prev__comments-count">4</div>
+                <div class="post-prev__comments-count"><?php comments_number( '0', '1', '%'); ?></div>
             </a>
         </div>
     </div>

@@ -31,7 +31,7 @@ get_header();
                 $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1; // Текущая страница
 
 				$args = array(
-                    'cat' => 8,
+                    'cat' => 24, // Фотографии: photo
 					'posts_per_page' => 6,
                     'paged'          => $current_page,
                     'orderby'     => 'date',
@@ -56,7 +56,7 @@ get_header();
 
         <!-- Кнопка LoadMore -->
 
-        <?php echo do_shortcode('[ajax_load_more category="article" button_label="Загрузить ещё" button_done_label="На сегодня это всё" post_type="post" posts_per_page="6" transition_delay="200" pause="true" scroll="false" offset="6"]'); ?>
+        <?php echo do_shortcode('[ajax_load_more category="photo" button_label="Загрузить ещё" button_done_label="На сегодня это всё" post_type="post" posts_per_page="6" transition_delay="200" pause="true" scroll="false" offset="6"]'); ?>
         
         <div class="divider"></div>
     </div>

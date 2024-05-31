@@ -1,5 +1,6 @@
 
 @mixin link-underline {    
+    font-style: italic;
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: all 0.4s ease-in-out;

@@ -1,3 +1,5 @@
+<!-- Контент страницы Творчество -->
+
 <div class="post-prev">
                 
     <a href="<?php echo get_permalink(); ?>">
@@ -30,6 +32,9 @@
             if ( is_author() ) { ?>
                 <div class="post__date"><?php the_date( 'j F Y' ); ?></div>
                 <?php
+            } elseif ( is_category('20') ) { ?>
+                <div class="post__date"><?php the_date( 'j F Y' ); ?></div>
+                <?php    
             } else { ?>
                 <a href="<?php echo get_author_posts_url( $author_id ); ?>" class="post-prev__autor"><?php the_author(); ?></a>
                 <?php
@@ -37,12 +42,28 @@
         ?>
 
         <div class="post-prev__title"><?php the_title(); ?></div>
-        <div class="post-prev__text"><?php the_excerpt(); ?></div>
+        <a href="<?php echo get_permalink(); ?>">
+            <div class="post-prev__text"><?php the_excerpt(); ?></div>
+        </a>
     </div>
     
     <div class="post-prev__bottom">
-        <a class="btn" href="<?php echo get_permalink(); ?>">Читать</a>
+        
+        <?php
+            if ( is_category(['news', 'photo']) ) { ?>
+                <a class="btn" href="<?php echo get_permalink(); ?>">Смотреть</a>
+                <?php    
+            } else { ?>
+                <a class="btn" href="<?php echo get_permalink(); ?>">Читать</a>
+                <?php
+            }
+        ?>
+    
+        
+        
         <div class="post-prev__reactions">
+
+            <!-- Лайки -->
             <div class="post-prev__likes">
                 <button aria-label="Лайк">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25"
@@ -59,9 +80,11 @@
                         </defs>
                     </svg>
                 </button>
-                <div class="post-prev__likes-count">20</div>
+                <div class="post-prev__likes-count">0</div>
             </div>
-            <a aria-label="Комментарии" href="#" class="post-prev__comments">
+
+            <!-- Комменты -->
+            <a aria-label="Комментарии" href="<?php comments_link(); ?>" class="post-prev__comments">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 26 26"
                     fill="none">
                     <g clip-path="url(#clip0_432_656)">
@@ -76,7 +99,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-                <div class="post-prev__comments-count">4</div>
+                <div class="post-prev__comments-count"><?php comments_number( '0', '1', '%'); ?></div>
             </a>
         </div>
     </div>

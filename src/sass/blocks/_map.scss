@@ -1,3 +1,10 @@
+.map {
+    margin-top: 80px;
+    &__script {
+        margin-top: 20px;
+    }
+}
+
 @media (max-width: 1200px) {
     .container {
         max-width: 960px;
@@ -29,7 +36,7 @@
         padding: 0 20px;
     }
     .map {
-        margin-top: 30px;
+        margin-top: 70px;
         &__script {
             iframe {
                 height: 250px;

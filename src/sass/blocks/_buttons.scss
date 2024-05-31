@@ -101,5 +101,10 @@
                 width: 100%;
             }
         }
+        &_load-more {
+            display: block;
+            margin: 30px auto 0 auto;
+            color: $link-light;
+        }
     }
 }

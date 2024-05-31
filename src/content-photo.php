@@ -1,4 +1,4 @@
-<!-- Контент отдельного поста -->
+<!-- Контент отдельного поста категории Фото -->
 
 <div class="divider-birds">
     <img src="<?php echo bloginfo('template_url');?>/assets/img/birds-on-wires.svg" alt="">
@@ -20,72 +20,36 @@
 
 		<h1 class="post__title"><?php the_title(); ?></h1>
 
-		<figure>
-		<?php 
-			$image = get_field('post_img');
-			$photo = get_field('bio_img');
-			if( !empty( $image ) ): ?>
-				<img 
-					src="<?php echo $image['url']; ?>"   
-					alt="<?php echo $image['alt']; ?>"
-					class="post__img"   
-				/>
-			<?php
-			elseif( !empty( $photo ) ): ?>
-				<img 
-					src="<?php echo $photo['url']; ?>"   
-					alt="<?php echo $photo['alt']; ?>" 
-					class="post__img"  
-				/>
-		<?php 
-			endif; 
-		?>
-			<figcaption class="post__img-descr">
-			<?php
-				if (!empty( get_field('figcaption') )): 
-					the_field('figcaption'); 
-				elseif (!empty( get_field('bio_figcaption') )): 
-					the_field('bio_figcaption');
-				endif;
-			?>
-			</figcaption>
-		</figure>
+        <div class="entry-content mt-30">
+            <?php
+            the_content(
+                sprintf(
+                    wp_kses(
+                        /* translators: %s: Name of current post. Only visible to screen readers */
+                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'presnogorkovka' ),
+                        array(
+                            'span' => array(
+                                'class' => array(),
+                            ),
+                        )
+                    ),
+                    wp_kses_post( get_the_title() )
+                )
+            );
 
-		<div class="container_post">
+            wp_link_pages(
+                array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'presnogorkovka' ),
+                    'after'  => '</div>',
+                )
+            );
+            ?>
+        </div>
 
-			<div class="entry-content mt-30">
-				<?php
-				the_content(
-					sprintf(
-						wp_kses(
-							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'presnogorkovka' ),
-							array(
-								'span' => array(
-									'class' => array(),
-								),
-							)
-						),
-						wp_kses_post( get_the_title() )
-					)
-				);
-
-				wp_link_pages(
-					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'presnogorkovka' ),
-						'after'  => '</div>',
-					)
-				);
-				?>
-			</div>
-
-			<div class="post__date mt-30"><?php the_date( 'j F Y' ); ?></div>
+        <div class="container_post">
 
 			<div class="post__actions mt-30">
-
-				<!-- Лайки -->
-
-				<div class="post__likes">				
+				<div class="post__likes">
 					<button aria-label="Лайк">
 						<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
 							<g clip-path="url(#clip0_432_652)">
@@ -102,17 +66,11 @@
 					</button>
 					<div class="post__likes-count">0</div>
 				</div>
-
-				<!-- Подписка на автора -->
-
 				<?php
 				if( !in_category( 20 ) ) { ?>
 					<!-- <button class="btn post__actions-subscribe">подписаться на автора</button> -->
 				<?php
 				} ?>
-				
-				<!-- Поделиться -->
-				
 				<button class="btn">поделиться с друзьями</button>
 			</div>
 
@@ -121,14 +79,14 @@
 			<div class="post__navigation">
 				<?php
 				
-					if( get_adjacent_post(false, '20, 24', true) ) {
-						previous_post_link('Читайте также: %link', '%title', false, '20 and 24');
+					if( get_adjacent_post(true, '6', true) ) {
+						previous_post_link('Cмотрите также: %link', '%title', true, '6');
 					}
 					else {
 						$last = new WP_Query('posts_per_page=1&order=DESC');
 						$last->the_post();
 					
-						echo '<a href="' . get_permalink() . '" class="btn">Другие тексты</a>';
+						echo '<a href="' . get_permalink() . '" class="btn">Другие фотографии</a>';
 					
 						wp_reset_postdata();
 					}

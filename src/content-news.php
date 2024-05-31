@@ -24,10 +24,12 @@
     <div class="post-prev__content">
         <div class="post__date"><?php the_date( 'j F Y' ); ?></div>
         <div class="post-prev__title"><?php the_title(); ?></div>
-        <div class="post-prev__text"><?php the_excerpt(); ?></div>
+        <a href="<?php echo get_permalink(); ?>">
+            <div class="post-prev__text"><?php the_excerpt(); ?></div>
+        </a>
     </div>
     <div class="post-prev__bottom">
-        <a class="btn" href="https://wa.me/+77711354527">Написать</a>
+        <a class="btn" href="https://wa.me/+77711354527">Смотреть</a>
         <div class="post-prev__reactions">
             <div class="post-prev__likes">
                 <button aria-label="Лайк">
@@ -45,9 +47,9 @@
                         </defs>
                     </svg>
                 </button>
-                <div class="post-prev__likes-count">20</div>
+                <div class="post-prev__likes-count">0</div>
             </div>
-            <a aria-label="Комментарии" href="#" class="post-prev__comments">
+            <a aria-label="Комментарии" href="<?php comments_link(); ?>" class="post-prev__comments">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 26 26"
                     fill="none">
                     <g clip-path="url(#clip0_432_656)">
@@ -62,7 +64,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-                <div class="post-prev__comments-count">5</div>
+                <div class="post-prev__comments-count"><?php comments_number( '0', '1', '%'); ?></div>
             </a>
         </div>
     </div>

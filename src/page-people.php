@@ -4,93 +4,50 @@ Template Name: Люди
 */
 ?>
 
-<?php get_header();?>
+<?php 
+get_header(); 
+?>
 
-    <div class="people">
-        <div class="container">
-            <a href="#">
-                <h1 class="title title_link">История в лицах</h1>
-            </a>
+<div class="creative">
+    <div class="container">
+        <h1 class="title"><?php the_title(); ?></h1>
 
-            <div class="people__wrapper">
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/shekhter-a-p-1902.jpg" alt="Шехтер А.П."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Шехтер</div>
-                        <div class="people__name">Александр Петрович</div>
-                        <div class="people__years">(1862 – 1923)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/musrepov-gabit-mahmutovich.jpg" alt="Мусрепов Г.М."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Мусрепов</div>
-                        <div class="people__name">Габит Махмутович</div>
-                        <div class="people__years">(1902 – 1985)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/kobzhasarov-nurmakan-kobzhasarovich.jpg" alt="Кобжасаров Н.К."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Кобжасаров</div>
-                        <div class="people__name">Нурмакан Кобжасарович</div>
-                        <div class="people__years">(1908 – 1990)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/ermolaev-yuriy-fedorovich.jpg" alt="Ермолаев Ю.Ф."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Ермолаев</div>
-                        <div class="people__name">Юрий Фёдорович</div>
-                        <div class="people__years">(1926 – 2018)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/kalachev-mihail-pavlovich.jpg" alt="Калачёв М.П."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Калачёв</div>
-                        <div class="people__name">Михаил Павлович</div>
-                        <div class="people__years">(1921 – 2000)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/merinova-tatyana-dmitrievna.jpg" alt="Меринова Т.Д."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Меринова</div>
-                        <div class="people__name">Татьяна Дмитриевна</div>
-                        <div class="people__years">(1899 – 1985)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/voropaev-sergey-nikolaevich.jpg" alt="Воропаев С.Н."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Воропаев</div>
-                        <div class="people__name">Сергей Николаевич</div>
-                        <div class="people__years">(1921 – 1945)</div>
-                    </div>
-                </a>
-                <a href="#" class="people__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/posts/vinichenko-s-n/kizin-pavel-vasilyevich.jpg" alt="Кизин П.В."
-                        class="people__img">
-                    <div class="people__descr">
-                        <div class="people__family">Кизин</div>
-                        <div class="people__name">Павел Васильевич</div>
-                        <div class="people__years">(1922 – 1991)</div>
-                    </div>
-                </a>
-            </div>
+        <!-- Шаблон вывода постов -->
 
-            <button class="btn btn_load-more animate__swing wow" data-wow-duration="1s" data-wow-delay="1s">загрузить ещё</button>
+        <div class="people__wrapper">
+            
+            <?php
+                $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1; // Текущая страница
+                $args = array(
+                    'cat' => 5, /* Рубрика: Биографии */
+                    'posts_per_page' => -1,
+                    'paged'          => $current_page,
+                    'orderby'     => 'rand',
+                    'order'       => 'DESC',
+                    'post_type'   => 'post',
+                    'suppress_filters' => true,
+                );
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+        
+                        get_template_part( 'template-parts/content-people' );
+                    }
+                    wp_reset_postdata();
+                }
+            ?>
 
-            <div class="divider"></div>
         </div>
-    </div>
 
-<?php get_footer();?>
+        <!-- Кнопка LoadMore -->
+
+        <!-- <?php echo do_shortcode('[ajax_load_more category="biography" button_label="Загрузить ещё" button_done_label="На сегодня это всё" post_type="post" posts_per_page="6" transition_delay="200" pause="true" scroll="false" offset="6"]'); ?> -->
+        
+        <div class="divider"></div>
+    </div>
+</div>
+
+<?php
+get_footer();
+?>
