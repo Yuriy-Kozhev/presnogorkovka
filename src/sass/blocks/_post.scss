@@ -130,6 +130,17 @@
     }
 }
 
+@media (max-width: 710px) {
+    .post {
+        &__date {
+            font-size: 18px;
+        }
+        &__navigation {
+            font-size: 18px;
+        }
+    }
+}
+
 @media (max-width: 576px) {
     .container {
         width: 100%;
@@ -146,16 +157,10 @@
         &__title {
             font-size: 26px;
         }
-        &__date {
-            font-size: 18px;
-        }
         &__likes {
             &-count {
                 font-size: 18px;
             }
-        }
-        &__navigation {
-            font-size: 18px;
         }
         &__comment {
             svg {

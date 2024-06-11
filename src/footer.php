@@ -37,6 +37,8 @@
                         </div>
                     </form>
                 </div>
+
+                <!-- МЕНЮ -->
                 
                 <nav aria-label="Рубрики">
 

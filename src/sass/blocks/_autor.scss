@@ -1,6 +1,7 @@
 .autor {
     margin-top: 40px;
     &__name {
+        margin-top: 40px;
         text-align: center;
         font-size: 36px;
         font-weight: 700;
@@ -24,7 +25,7 @@
         object-position: top;
     }
     &__bio {
-        margin: 30px 0 0 0;
+        margin: 20px 0 0 0;
         text-align: center;
     }
     &__tags {
@@ -67,5 +68,11 @@
         &__bio {
             font-size: 18px;
         }
+    }
+}
+
+@media (max-width: 425px) {
+    .autor__bio {
+        margin: 10px 0 0 0;
     }
 }

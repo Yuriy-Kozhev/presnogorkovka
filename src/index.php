@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <section class="forum">
+    <!-- <section class="forum">
         <div class="container">
             <a href="#" class="title-wrap">
                 <h2 class="title title_link">Форум</h2>
@@ -176,7 +176,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="map">
         <div class="container">
