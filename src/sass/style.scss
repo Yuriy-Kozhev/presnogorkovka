@@ -95,6 +95,10 @@ ul {
     pointer-events: none;
 }
 
+.grecaptcha-badge {
+    display: none;
+}
+
 @media (max-width: 576px) {
     p {
         font-size: 18px;

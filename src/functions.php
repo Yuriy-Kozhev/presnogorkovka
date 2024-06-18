@@ -11,6 +11,14 @@
     };
  
     add_theme_support( 'post-thumbnails' );
+
+    // включим регистрацию реколл когда в настройках вордпресса она отключена
+
+    function dd3_open_rcl_register() {
+        $option = 1;
+        return $option;
+    }
+    add_filter('rcl_users_can_register','dd3_open_rcl_register');
     
     // Отключение верхней админ-панели на фронтенде
 
@@ -100,6 +108,20 @@
         echo '<a href="' . $chat_btn . '" class="btn">Сообщение</a>';  
     }
     add_action('rcl_user_description', 'chat_to_author', 30);
+
+    // Отключаем создание миниатюр файлов для указанных размеров
+
+    add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
+
+    function delete_intermediate_image_sizes( $sizes ) {
+        return array_diff( $sizes, [
+            'medium_large',
+            'large',
+            '1536x1536',
+            '2048x2048',
+            'alm-thumbnail',
+        ] );
+    }
 
     // Фильтр рубрик
 

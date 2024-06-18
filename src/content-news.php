@@ -32,10 +32,12 @@
         <a class="btn" href="<?php echo get_permalink(); ?>">Смотреть</a>
         <div class="post-prev__reactions">
             <!-- Лайки -->
-            <div class="post-prev__likes">
-                <i class="rcli fa-solid fa-heart" aria-hidden="true" title="Сначала прочитай :)"></i>
-                <div class="post-prev__likes-count"><?php echo rcl_get_total_rating($post->ID,'post'); ?></div>
-            </div>
+            <a aria-label="Оценки" href="<?php echo get_permalink(); ?>">
+                <div class="post-prev__likes">
+                    <i class="rcli fa-solid fa-heart" aria-hidden="true" title="Сначала прочитай :)"></i>
+                    <div class="post-prev__likes-count"><?php echo rcl_get_total_rating($post->ID,'post'); ?></div>
+                </div>
+            </a>
 
             <!-- Комменты -->
             <a aria-label="Комментарии" href="<?php comments_link(); ?>" class="post-prev__comments">

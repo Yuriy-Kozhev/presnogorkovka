@@ -58,13 +58,6 @@
 					<?php echo rcl_get_html_post_rating($post->ID,$post->post_type); ?>	
 				</div>
 
-				<?php
-				if( !in_category( 20 ) ) { ?>
-					<!-- <button class="btn post__actions-subscribe">подписаться на автора</button> -->
-				<?php
-				} ?>
-
-				<button class="btn">поделиться с друзьями</button>
 			</div>
 
 			<!-- Навигация -->
@@ -79,7 +72,7 @@
 						$last = new WP_Query('posts_per_page=1&order=DESC');
 						$last->the_post();
 					
-						echo '<a href="' . get_permalink() . '" class="btn">Другие фотографии</a>';
+						echo '<a href="' . get_permalink() . '">Другие фотографии</a>';
 					
 						wp_reset_postdata();
 					}
