@@ -3,25 +3,7 @@
 <div class="post-prev">
                 
     <a href="<?php echo get_permalink(); ?>">
-        <?php
-            $image = get_field('post_img');
-            $photo = get_field('bio_img');
-            if( !empty( $image ) ): ?>
-                <img
-                    src="<?php echo $image['url']; ?>"
-                    alt="<?php echo $image['alt']; ?>"
-                    class="post-prev__img"
-                />
-            <?php
-            elseif( !empty( $photo ) ): ?>
-                <img
-                    src="<?php echo $photo['url']; ?>"
-                    alt="<?php echo $photo['alt']; ?>"
-                    class="post-prev__img"
-                />
-        <?php
-            endif;
-        ?>
+        <img class="post-prev__img" src="<?php the_post_thumbnail_url(); ?>">
     </a>
     
     <div class="post-prev__content">

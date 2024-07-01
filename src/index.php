@@ -7,14 +7,12 @@
                 <h2 class="title title_link">В объективе времени</h2>
             </a>
             
-            <div class="history-slides">
-                <div class="history-slider">
-                    <?php
-                    echo do_shortcode('[xo_slider id="466"]');
-                    ?>
-                </div>
+            <div class="history-slider">
+                <?php
+                echo do_shortcode('[xo_slider id="466"]');
+                ?>
             </div>
-
+            
             <a href="<?php echo get_category_link(24); ?>" class="btn btn_load-more animate__swing wow" data-wow-duration="1s" data-wow-delay="1s">смотреть фотографии</a>
         </div>
     </section>

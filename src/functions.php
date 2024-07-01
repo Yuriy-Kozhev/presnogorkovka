@@ -12,7 +12,7 @@
  
     add_theme_support( 'post-thumbnails' );
 
-    // включим регистрацию реколл когда в настройках вордпресса она отключена
+    // включим регистрацию WP-Recall когда в настройках вордпресса она отключена
 
     function dd3_open_rcl_register() {
         $option = 1;
@@ -54,6 +54,35 @@
         $selectors = implode(", ", $delete);
         echo "<style>{$selectors}{display:none;}</style>";
     }
+
+    // Ограничим видимость чужих медиа для авторов
+   
+    add_filter( 'ajax_query_attachments_args', 'wpb_show_current_user_attachments' );
+    
+    function wpb_show_current_user_attachments( $query ) {
+        $user_id = get_current_user_id();
+        if ( $user_id && !current_user_can('activate_plugins') && !current_user_can('edit_others_posts
+    ') ) {
+            $query['author'] = $user_id;
+        }
+        return $query;
+    }
+
+    // Ограничим видимость чужих записей для авторов
+
+    function posts_for_current_author($query) {
+        global $pagenow;
+    
+        if( 'edit.php' != $pagenow || !$query->is_admin )
+            return $query;
+    
+        if( !current_user_can( 'edit_others_posts' ) ) {
+            global $user_ID;
+            $query->set('author', $user_ID );
+        }
+        return $query;
+    }
+    add_filter('pre_get_posts', 'posts_for_current_author');
 
     // Меню
 

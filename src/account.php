@@ -9,15 +9,20 @@ Template Name: Аккаунт WP-Recall
     get_header();
 ?>
 
+<?php 
+    if ( is_user_logged_in() ) { ?>
+	    <div class="container">
+            <?php global $user_LK; ?> 
+
+            <h1 class="autor__name"><?php the_author_meta( 'display_name', $user_LK ); ?></h1>
+            <p class="autor__bio"><?php the_author_meta( 'user_description', $user_LK ); ?></p>
+        </div>
+    <?php
+    }
+?>
+
 <div class="container">
-    
-    <?php global $user_LK; ?> <!-- Получаем глобальную переменную WP-Recall -->
-
-    <h1 class="autor__name"><?php the_author_meta( 'display_name', $user_LK ); ?></h1>
-    <p class="autor__bio"><?php the_author_meta( 'user_description', $user_LK ); ?></p>
-
     <?php echo do_shortcode('[wp-recall]'); ?>
-
 </div>
 
 <div class="creative">
@@ -58,9 +63,7 @@ Template Name: Аккаунт WP-Recall
 
             ?>
 
-        </div>
-        
-        <!-- Кнопка LoadMore. Выводим только если есть посты -->
+        </div>        
 
         <?php 
             if( $query->have_posts() ) {
@@ -70,6 +73,7 @@ Template Name: Аккаунт WP-Recall
         
         <div class="divider"></div>
     </div>
+
 </div>
 
 <?php
