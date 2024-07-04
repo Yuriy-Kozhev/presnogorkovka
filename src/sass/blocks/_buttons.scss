@@ -54,28 +54,6 @@
     &_unhover {
         pointer-events: none;
     }
-
-    &__dropdown {
-        position: relative;
-        display: inline-block;
-        &-wrapper {
-            text-align: center;
-        }
-        &-content {
-            display: none;
-            position: absolute;
-            width: 100%;
-            opacity: .9;
-            z-index: 1;
-            a {
-                display: flex;
-                justify-content: center;
-            }
-            &_show {
-                display: block;
-            }
-        }
-    }
 }
 
 @media (max-width: 992px) {

@@ -8,6 +8,10 @@ Template Name: Шаблон для страницы История
 get_header(); 
 ?>
 
+<div class="container">
+	<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+</div>
+
 <section class="creative">
     <div class="container">
         

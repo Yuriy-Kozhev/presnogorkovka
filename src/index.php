@@ -1,5 +1,9 @@
 <?php get_header();?>
 
+    <div class="container">
+        <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+    </div>
+
     <section class="photo">
         <div class="container">
             
@@ -134,24 +138,6 @@
             <a href="people" class="btn btn_load-more animate__swing wow" data-wow-duration="1s" data-wow-delay="1s">другие пресногорьковцы</a>
         </div>
     </section>
-
-    <!-- <section class="forum">
-        <div class="container">
-            <a href="#" class="title-wrap">
-                <h2 class="title title_link">Форум</h2>
-            </a>
-
-            <div class="forum__wrapper">
-                <a href="#">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/gallery/shkola-fizkabinet-1950.jpg" alt="Физкабинет 1950 г." class="forum__img">
-                </a>
-                <div class="forum__content">
-                    <div class="forum__descr">Общаемся на разные темы</div>
-                    <a href="#" class="btn forum-btn">Вход</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="map">
         <div class="container">

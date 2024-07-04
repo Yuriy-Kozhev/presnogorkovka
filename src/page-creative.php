@@ -8,6 +8,10 @@ Template Name: Творчество
 get_header(); 
 ?>
 
+<div class="container">
+	<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+</div>
+
 <div class="creative">
     <div class="container">
         <h1 class="title">Творчество пресногорьковцев</h1>

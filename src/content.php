@@ -91,6 +91,10 @@
 
 			</div>
 
+			<!-- Поделиться -->
+
+			<!-- <div><?php echo do_shortcode('[yw_share]'); ?></div> -->
+
 			<!-- Навигация -->
 
 			<div class="post__navigation">
