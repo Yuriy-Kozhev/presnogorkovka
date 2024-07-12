@@ -7,7 +7,6 @@
         flex-wrap: wrap;
         gap: 20px;
     }
-    
 }
 
 .post-prev {
@@ -45,6 +44,7 @@
         flex-direction: column;
         gap: 10px;
         font-size: 20px;
+        border-top: 1px solid $dark-15;
         border-right: 1px solid $dark-15;
         border-left: 1px solid $dark-15;
         background-color: $dark-6;

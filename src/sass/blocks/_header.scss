@@ -9,14 +9,15 @@
         padding: 0 30px;
     }
     &__age {
-        font-family: Kanalisirung;
+        font-family: Stengazeta;
+        letter-spacing: 3px;
         font-size: 50px;
         font-weight: 500;
         line-height: normal;
         color: $light;
         &-wrapper {
             position: absolute;
-            top: 77px;
+            top: 66px;
             left: 50%;
             transform: translate(-50%);
         }
@@ -58,7 +59,7 @@
             background-color: $dark;
             height: 9px;
             &_1 {
-                margin-top: 35px;
+                margin-top: 0;
             }
             &_2 {
                 margin-top: 5px;
@@ -71,13 +72,17 @@
                 margin-top: 5px;
             }
             &_2 {
-                margin-top: 30px;
+                margin-top: 0;
             }
         }
     }
 
     &__body {
-        margin: 0 auto;
+        margin: 35px auto;
+        height: 164px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     &__img {
         &_left {
@@ -92,14 +97,14 @@
         }
     }
     &__title {
-        margin-top: 30px;
+        margin: 0 auto;
         text-align: center;
-        font-family: Kanalisirung;
+        font-family: Stengazeta;
         font-size: 100px;
-        height: 70px;
         font-weight: 500;
         line-height: normal;
         text-transform: uppercase;
+        letter-spacing: 3px;
     }
 }
 
@@ -131,10 +136,11 @@
 
 @media (max-width: 768px) {
     .header {
+        &__body {
+            height: 130px;
+        }
         &__title {
             font-size: 72px;
-            margin-top: 20px;
-            height: 40px;
         }
         &__img {
             &_left {
@@ -150,9 +156,12 @@
 @media (max-width: 576px) {
     .header {
         margin-top: 20px;
+        &__body {
+            height: 120px;
+        }
         &__top {
             padding: 0 20px;
-            height: 65px;
+            height: 50px;
         }
         &__whatsapp {
             display: block;
@@ -160,22 +169,39 @@
         &__socials {
             display: none;
         }
-        &__line {
-            &-bold {
-                &_1 {
-                    margin-top: 20px;
-                }
-            }
+        &__title {
+            font-size: 55px;
         }
-        &__line {
-            &-thin {
-                &_2 {
-                    margin-top: 9px;
-                }
-            }
+    }
+}
+
+@media (max-width: 425px) {
+    .header {
+        &__body {
+            height: 110px;
         }
         &__title {
-            font-size: 44px;
+            font-size: 50px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .header {
+        &__title {
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .header {
+        &__body {
+            height: 100px;
+        }
+        &__title {
+            font-size: 45px;
+            letter-spacing: 2px;
         }
     }
 }

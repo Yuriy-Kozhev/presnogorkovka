@@ -83,6 +83,8 @@
 
 			<div class="post__actions mt-30">
 
+				<p>Понравилось? Оцените! (требуется <a href="https://presnogorkovka.life/account/">авторизация</a>)</p>
+
 				<!-- Лайки -->
 
 				<div class="post__likes">		

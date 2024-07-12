@@ -1,17 +1,6 @@
-<!-- Контент страницы Творчество -->
-
-<div class="post-prev">
+<div class="post-poem">
                 
-    <a href=" <?php echo get_permalink(); ?> ">
-        <img class="post-prev__img" src=" <?php 
-            if (has_post_thumbnail()) {
-                the_post_thumbnail_url();
-            } else { ?>
-                https://presnogorkovka.life/wp-content/uploads/2024/07/poem.svg 
-            <?php
-            } ?> 
-        ">
-    </a>
+    <img class="post-prev__img" src="<?php the_post_thumbnail_url(); ?>">
     
     <div class="post-prev__content">
 
@@ -32,13 +21,7 @@
 
         <div class="post-prev__title"><?php the_title(); ?></div>
         <a href="<?php echo get_permalink(); ?>">
-            <div class="post-prev__text">
-                <?php
-                    $maxchar = 500;
-                    $text = strip_tags( get_the_content() );
-                    echo mb_substr( $text, 0, $maxchar );
-                ?>
-            </div>
+            <div class="post-prev__text"><?php the_excerpt(); ?></div>
         </a>
     </div>
     

@@ -79,14 +79,27 @@
 }
 
 @font-face {
-    font-family: "Kanalisirung";
-    src: url("assets/fonts/Kanalisirung.eot");
-    src: local("Kanalisirung"),
-        url("assets/fonts/Kanalisirung.eot?#iefix") format("embedded-opentype"),
-        url("assets/fonts/Kanalisirung.woff2") format("woff2"),
-        url("assets/fonts/Kanalisirung.woff") format("woff"),
-        url("assets/fonts/Kanalisirung.ttf") format("truetype");
+    font-family: 'Kanalisirung';
+    src: url('assets/fonts/Kanalisirung.eot');
+    src: local('Kanalisirung'),
+        url('assets/fonts/Kanalisirung.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Kanalisirung.woff2') format('woff2'),
+        url('assets/fonts/Kanalisirung.woff') format('woff'),
+        url('assets/fonts/Kanalisirung.ttf') format('truetype');
     font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stengazeta';
+    src: url('assets/fonts/Stengazeta-Regular.eot');
+    src: local('Stengazeta Regular'), local('Stengazeta-Regular'),
+        url('assets/fonts/Stengazeta-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Stengazeta-Regular.woff2') format('woff2'),
+        url('assets/fonts/Stengazeta-Regular.woff') format('woff'),
+        url('assets/fonts/Stengazeta-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
